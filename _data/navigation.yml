@@ -1,0 +1,9 @@
+main:
+  # - title: "Archive"
+  #   url: /archive/
+  - title: "Categories"
+    url: /categories/
+  - title: "Archive"
+    url: /year-archive/
+  - title: "About me"
+    url: /about/

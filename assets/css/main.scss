@@ -1,0 +1,30 @@
+---
+---
+
+.code-header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.3em;
+    background: #3b3b3b;
+}
+
+.copy-code-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    font-size: 0.7rem;
+    background-color: #616161;
+    color: #e7e7e7;
+    padding: 0.4em 0.5em;
+    border-radius: 5px;
+    height: 2em;
+}
+
+
+// >>> Custom CSS needs to be added _before_ any imports !!!
+
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
+@import "minimal-mistakes"; // main partials
+

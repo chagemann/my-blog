@@ -96,15 +96,15 @@ defaults:
       related: true
 
 
-repository: "chagemann/blog"
+repository: "chagemann/my-blog"
 comments:
   provider: "giscus"
   giscus:
     enabled: true
-    repo: "chagemann/blog"
-    repo_id: "R_kgDOKAPYng"
+    repo: "chagemann/my-blog"
+    repo_id: "R_kgDOLAvm8Q"
     category_name: "Announcements"
-    category_id: "DIC_kwDOKAPYns4CbqOi"
+    category_id: "DIC_kwDOLAvm8c4CcNBj"
     discussion_term: "pathname"
     reactions_enabled: "1"
     theme: "preferred_color_scheme"

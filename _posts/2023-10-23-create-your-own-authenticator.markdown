@@ -2,7 +2,7 @@
 layout: single
 title:  "Create your own authenticator"
 date:   2023-10-23 22:54:00 +1000
-categories: Verify-SDK Android
+categories: verify-sdk android
 show_date: true
 thumbnail: /assets/images/create_your_authenticator_flow.png
 ---

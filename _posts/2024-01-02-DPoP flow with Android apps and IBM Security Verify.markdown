@@ -2,9 +2,12 @@
 layout: single
 title:  "Implement high assurance flows with IBM Security Verify and Android apps"
 date:   2024-01-02 14:37:22 +1000
-categories: OAuth DPoP Android Verify IAM
+categories: OAuth DPoP android verify iam
 show_date: true
+excerpt: In this article, I am going to show you how to implement the use of 'Demonstration Proof-of-Possession' (`DPoP`) tokens from IBM Security Verify (ISV) into your mobile and custom web app.
 ---
+
+_Disclaimer: This article was originally written [for IBM](https://docs.verify.ibm.com/verify/docs/best-practices-demonstration-proof-of-possession). That article also contains a section about iOS, which was written by my co-worker._ 
 
 In this article, I am going to show you how to implement the use of 'Demonstration Proof-of-Possession' (`DPoP`) tokens from IBM Security Verify (ISV) into your mobile and custom web app.
 
@@ -25,6 +28,7 @@ I describe the mechanisms for the relevant parties (client, authorization server
         - [Request DPoP Token](#request-dpop-token)
         - [Validate DPoP Token](#validate-dpop-token)
         - [Protecting the Signing Key](#protecting-the-signing-key)
+    - [iOS App](#ios-app)
 - [Limitations](#limitations)
 - [Conclusion](#conclusion)
 
@@ -138,7 +142,7 @@ The custom web app mimics a resource server that validates DPoP tokens.
 #### Setup
 1. Download the demo app from [here](https://github.com/IBM-Security/verify-saas-resources/tree/main/apps/oauth/dpop/Web)
 1. Configure the relevant parameter in `app.js`
-1. Run `node install`
+1. Run `npm install`
 1. Start the server by `node app.js`
 
 That starts the server on `https://localhost:8080`.
@@ -382,8 +386,8 @@ jws.key = getRsaSigningKey()
 jws.jwkHeader = RsaJsonWebKey(keyStore.getCertificate(RSA_KEY_NAME).publicKey as RSAPublicKey)
 ```
 
-<!-- ### iOS App
-The original post includes an iOS section, written by my co-worker. I just link it here, as I don't want to claim credit for that. -->
+### iOS App
+The original post includes an [iOS section](https://docs.verify.ibm.com/verify/docs/best-practices-demonstration-proof-of-possession#ios-app), written by my co-worker. I just link it here, as I don't want to claim credit for it.
 
 ## Limitations
 Using `DPoP` prevents bad actors from getting access to protected resources by extracting an access token from a client. They would also need access to the crypto key that is bound to that token - that significantly increases the complexity of an attack.

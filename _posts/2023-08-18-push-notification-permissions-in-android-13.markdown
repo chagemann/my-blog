@@ -2,7 +2,7 @@
 layout: single
 title:  "Push notification permissions in Android 13"
 date:   2023-08-18 12:12:12 +1000
-categories: android push support
+categories: android push
 show_date: true
 ---
 

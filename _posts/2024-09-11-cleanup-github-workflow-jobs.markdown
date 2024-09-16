@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "Cleanup GitHub workflow runs automatically"
+title:  "Cleanup GitHub workflows jobs"
 date:   2024-09-11 14:27:21 +1000
 categories: github automation housekeeping
 show_date: true

@@ -2,7 +2,7 @@
 layout: single
 title:  "Backup with rclone"
 date:   2023-12-22 22:54:00 +1000
-categories: backup tools
+categories: backup tools automation
 show_date: true
 ---
 

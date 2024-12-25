@@ -66,7 +66,7 @@ author:
   avatar   : "/assets/images/i.jpg"
   bio      : "I am a software engineer, building mobile apps and libraries for Android in the IAM stack."
   location : "Gold Coast, Australia"
-  stackoverflow: "5146268/carha"
+  stackoverflow: "5146268/caha"
   github: "chagemann"
   linkedin: "carstenhagemann"
   email: "carsten@toomanyrequests.com"
@@ -120,16 +120,6 @@ category_archive:
 tag_archive:
   type: liquid
   path: /tags/
-# jekyll-archives:
-#   enabled:
-#     - categories
-#     - tags
-#   layouts:
-#     category: archive-taxonomy
-#     tag: archive-taxonomy
-#   permalinks:
-#     category: /categories/:name/
-#     tag: /tags/:name/
 
 google_fonts:
   # - name: "Source Sans Pro"

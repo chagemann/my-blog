@@ -110,10 +110,6 @@ comments:
     theme: "preferred_color_scheme"
     crossorigin: "anonymous" 
 
-# Taxonomy pages
-category_archive_path: "/categories/#"
-tag_archive_path: "/tags/#"
-
 category_archive:
   type: jekyll-archives
   path: /categories/

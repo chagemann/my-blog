@@ -34,7 +34,7 @@ minimal_mistakes_skin: "dark" # "default", "air", "aqua", "contrast", "dark", "d
 remote_theme: "mmistakes/minimal-mistakes@4.24.0"
 plugins:
   - jekyll-feed
-  - jekyll-archives
+  # - jekyll-archives
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-gist
@@ -110,22 +110,26 @@ comments:
     theme: "preferred_color_scheme"
     crossorigin: "anonymous" 
 
+# Taxonomy pages
+category_archive_path: "/categories/#"
+tag_archive_path: "/tags/#"
+
 category_archive:
-  type: jekyll-archives
+  type: liquid
   path: /categories/
 tag_archive:
-  type: jekyll-archives
+  type: liquid
   path: /tags/
-jekyll-archives:
-  enabled:
-    - categories
-    - tags
-  layouts:
-    category: archive-taxonomy
-    tag: archive-taxonomy
-  permalinks:
-    category: /categories/:name/
-    tag: /tags/:name/
+# jekyll-archives:
+#   enabled:
+#     - categories
+#     - tags
+#   layouts:
+#     category: archive-taxonomy
+#     tag: archive-taxonomy
+#   permalinks:
+#     category: /categories/:name/
+#     tag: /tags/:name/
 
 google_fonts:
   # - name: "Source Sans Pro"

@@ -43,11 +43,11 @@ When a user clicks on a link, several steps are typically involved in the flow, 
 ```mermaid
 flowchart TB
     start([User clicks on link]) --> 
-    step1{{App is associated with schema}}
-    step1 -->|true| step2{{App is associated with link}}
+    step1([App is associated with schema])
+    step1 -->|true| step2([App is associated with link])
     step1 -->|false| step3([Default action])
     step3 --> End
-    step2 -->|true| step4{{Association is verified}}
+    step2 -->|true| step4([Association is verified])
     step2 -->|false| step3
     step4 -->|success| step5([App opens])
     step4 -->|failed| step3

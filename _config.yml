@@ -31,7 +31,7 @@ minimal_mistakes_skin: "dark" # "default", "air", "aqua", "contrast", "dark", "d
 
 # Build settings
 # theme: minimal-mistakes-jekyll
-remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+remote_theme: "mmistakes/minimal-mistakes@4.27.0"
 plugins:
   - jekyll-feed
   # - jekyll-archives
@@ -40,6 +40,7 @@ plugins:
   - jekyll-gist
   - jemoji
   - jekyll-include-cache
+  - jekyll-remote-theme
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -60,6 +61,9 @@ plugins:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+
+sass:
+  style: compressed
 
 author:
   name     : "Carsten Hagemann"

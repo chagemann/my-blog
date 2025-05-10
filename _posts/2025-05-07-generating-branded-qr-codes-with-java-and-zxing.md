@@ -11,28 +11,28 @@ excerpt: QR codes are a staple in modern technology, offering a quick and conven
 
 By adding a logo to the center of a QR code, you can make it stand out, build brand recognition, and help users easily identify your trusted content. In this post, we'll walk through how to generate branded QR codes in Java using the ZXing library, and how to seamlessly embed your logo into the code without compromising scannability.
 
-## Tools and libraries needed
+## Tools and Libraries
 
 1. Java 17 (or any recent version), compatible with modern libraries.
 1. [ZXing](https://github.com/zxing/zxing) as the go-to solution for generating QR codes, providing an easy way to create and manipulate QR codes. You'll need the core ZXing library (`zxing-core`) and the Java SE version (`zxing-javase`)
 1. [GIMP](https://www.gimp.org/) (optional) to prepare and size your logo to fit within the QR code. I followed [this tutorial](https://www.youtube.com/watch?v=FMSdW5csDLU) to create the logos used in the demo app.
 
-## How does it work
+## How it works
 
-To add a logo to a QR code, we use the ZXing library to generate the QR code and specify a high error correction level (`EncodeHintType.ERROR_CORRECTION = ErrorCorrectionLevel.H`). [This setting](https://zxing.github.io/zxing/apidocs/com/google/zxing/qrcode/decoder/ErrorCorrectionLevel.html) allows a portion of the QR code to be obscured without making it unreadable.
+To embed a logo in a QR code, the ZXing library is used to generate the code with a high error correction  level (`EncodeHintType.ERROR_CORRECTION = ErrorCorrectionLevel.H`). [This setting](https://zxing.github.io/zxing/apidocs/com/google/zxing/qrcode/decoder/ErrorCorrectionLevel.html) allows a portion of the QR code to be obscured without making it unreadable.
 
 The logo is overlaid at the center of the QR code and typically sized to not exceed 20–30% of the QR area. In our demo app, we generate the QR code dynamically from input data, but you could also apply a logo to a static QR code image.
 
 The key is to avoid blocking the QR code’s essential data regions. Once the QR code and logo are combined, the resulting image remains scannable.
 
-## Show me the code
+## Code Walkthrough
 
-Let's take a look at the actual code. This example keeps things simple — just enough to generate a QR code, apply a logo in the center, and export the final image as a PNG.
+This example keeps things simple — just enough to generate a QR code, apply a logo in the center, and export the final image as a PNG. Here’s a breakdown of the core implementation steps, each backed by GitHub Gists: 
 
 1. Set High error correction.
 {% gist chagemann/b036eb6eee71b2984dae7cf7a9710233 %}
 
-1. Generate QR code with input data.
+1. Generate QR code from input data.
 {% gist chagemann/172df9718e8cfb5e8c1b9b104523570e %}
 
 1. Load an image file (the logo) from the application’s resource folder.
@@ -54,7 +54,7 @@ Let's take a look at the actual code. This example keeps things simple — just 
 
 A demo application showcasing the generation of branded QR codes is available here: [https://github.com/chagemann/Branded-QR-Codes](https://github.com/chagemann/Branded-QR-Codes)
 
-The logo image should be placed in the `./app/src/main/resources/` directory, and the output image will be saved in the `./app` folder.
+The logo image should be placed in the `./app/src/main/resources/` directory, and the output image will be saved in the `./app` folder. Then execute it with `./gradlew build run`.
 
 Here are two more examples of how that could look like:
 <div style="text-align: center;">
@@ -62,7 +62,7 @@ Here are two more examples of how that could look like:
 <img src="/assets/images/qr_ibm_verify.png" alt="IBM branded QR code" class="scaled" />
 </div>
 
-## Conclusion
+## Summary
 
 Branded QR codes are a simple yet powerful enhancement that adds a layer of visual identity to an otherwise plain tool. With the help of Java and the ZXing library, it’s easy to automate their generation and integrate them into your application or service pipeline.
 

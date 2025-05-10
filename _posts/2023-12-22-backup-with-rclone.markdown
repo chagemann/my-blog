@@ -37,7 +37,7 @@ Here is a short list of [what `rclone` can do](https://rclone.org/#what):
 
 
 Copying data locally - as I do for the daily backups - is straight forward. Here is my daily backup script:
-{% include codeHeader.html %}
+
 ```bash
 #!/bin/zsh
 
@@ -46,7 +46,7 @@ DATE_FOLDER=`date | cut -d' ' -f1`
 ```
 
 The `filter-from` feature passes a list of files/folders that you want to filter for the backup. Here is mine as an example:
-{% include codeHeader.html %}
+
 ```bash
 - build/**
 - .idea/**
@@ -65,7 +65,7 @@ The `filter-from` feature passes a list of files/folders that you want to filter
 For store data with cloud storage providers, `rclone` mounts the remote file system as a disk. Currently, over 70 cloud storage providers [are supported](https://rclone.org/#providers). 
 
 When the remote file system is mounted, it can be used to transfer data like this:
-{% include codeHeader.html %}
+
 ```bash
 #!/bin/zsh
 
@@ -76,7 +76,7 @@ DATE_FOLDER="$(date +"%Y-%m-%d")"
 The `filter-from` file follows the same structure as mentioned above.
 
 One feature of `rclone` that I really like is, that it can serve the remote file system over HTTP (and others). This command
-{% include codeHeader.html %}
+
 ```bash
 rclone serve http Cloud-Storage:
 ```

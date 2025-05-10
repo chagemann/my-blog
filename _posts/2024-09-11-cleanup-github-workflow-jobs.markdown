@@ -17,7 +17,6 @@ To implement this:
 
 1. Add the following configuration to it:
 
-{% include codeHeader.html %}
 ```yaml
 name: Cleanup old workflow runs
 

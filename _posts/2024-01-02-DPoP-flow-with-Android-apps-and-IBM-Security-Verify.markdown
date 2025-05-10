@@ -249,7 +249,6 @@ In this demo app, I use the [`jose4j` library](https://bitbucket.org/b_c/jose4j)
 #### Request DPoP Token
 For every network request to the authorization and resource servers the app adds a `DPoP` header that is generated in the `generateDpopHeader` function:
 
-{% include codeHeader.html %}
 ```kotlin
 private fun generateDpopHeader(htu: String, htm: String, accessToken: String?): String {
     val jwtClaims: JwtClaims = JwtClaims()
@@ -305,7 +304,6 @@ Also note the absence of a refresh token because of `grant_type=client_credentia
 #### Validate DPoP Token
 With the `DPoP` token, the app can perform subsequent requests to the resource server. For each request, a new `DPoP` header needs to be constructed with the `generateDpopHeader(...)` method listed above...
 
-{% include codeHeader.html %}
 ```kotlin
 val headers = HashMap<String, String>()
 headers["DPoP"] = generateDpopHeader(
@@ -349,7 +347,6 @@ Authorization: DPoP abc...123
 #### Protecting the Signing Key
 The RSA keypair that is bound to the access token and that used to sign the `JWT`, is generated in the Android keystore to protect it.
 
-{% include codeHeader.html %}
 ```kotlin
 private fun getRsaSigningKey() : Key {
 

@@ -27,7 +27,6 @@ The IBM Verify SDK uses callbacks to inform the developer about the result of th
 ### Invoke the QR code scanner
 You could invoke the scanner that is part of the SDK. This is usually implemented in an `onClickButton` event like this:
 
-{% include codeHeader.html %}
 ```java
 final int SCAN_QR_REQUEST = 24
 
@@ -44,7 +43,6 @@ This will ask the user for permission to invoke the camera (if haven’t done pr
 ### Return `IQRScanResult`
 When the SDK detects a valid QR code, it will close the camera and return the `IQRScanResult` to the calling activity.
 
-{% include codeHeader.html %}
 ```java
 protected void onActivityResult(int requestCode, int resultCode, Intent data) {
     if (requestCode == SCAN_QR_REQUEST && data != null && data.hasExtra(IQRScanResult.class.getName())) {
@@ -56,7 +54,6 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 ### AuthenticatorContext.create(…)
 Register your device with the server and receive the OAuth token and metadata. The `scanResult` from the previous step does not need to be cast.
 
-{% include codeHeader.html %}
 ```java
 AuthenticatorContext.sharedInstance().create(scanResult,    // [04]
         new IResultCallback() {
@@ -99,7 +96,6 @@ For further documentation about to use protected keys, have a read at [https://d
 
 The following code creates a new thread for each available authentication method (except for `TotpAuthenticationMethod`, as there is no key required for that method) and generates a key pair. The public key and potential error object is returned in the callback. In case of success, the public key is set for the current method. For ISV, the signed `authenticatorId` needs to be added to the payload for enrollment. That is used on server side to validate the submitted public key.
 
-{% include codeHeader.html %}
 ```java
 IMfaAuthenticator mfaAuthenticator = (IMfaAuthenticator) iAuthenticator;
 Observable signatureAuthenticationMethodObservable = Observable.fromIterable(mfaAuthenticator.getAvailableMethods());
@@ -149,7 +145,6 @@ Once the keys have been created, we create a list of methods that we want to enr
 
 The `MfaAuthenticator` instance gets updated by the SDK to reflect the methods enrolled (`IMfaAuthenticator.getEnrolledMethods(...)`).
 
-{% include codeHeader.html %}
 ```java
 ...
 .observeOn(AndroidSchedulers.mainThread())

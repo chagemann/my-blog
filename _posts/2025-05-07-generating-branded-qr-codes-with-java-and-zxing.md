@@ -70,7 +70,7 @@ Whether you're improving user trust, strengthening your brand presence, or simpl
 
 ---
 
-_"Freedom is always the freedom of those who think differently."_
+_"Nothing lasts as long as a temporary solution."_
 <br/><br/>
--- Rosa Luxemburg
+-- Milton Friedman
 {: style="text-align: center;"}

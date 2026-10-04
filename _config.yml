@@ -30,8 +30,8 @@ minimal_mistakes_skin: "dark" # "default", "air", "aqua", "contrast", "dark", "d
 
 
 # Build settings
-# theme: minimal-mistakes-jekyll
-remote_theme: "mmistakes/minimal-mistakes@4.27.0"
+theme: minimal-mistakes-jekyll
+#remote_theme: "mmistakes/minimal-mistakes@4.27.0"
 plugins:
   - jekyll-feed
   # - jekyll-archives
@@ -40,7 +40,7 @@ plugins:
   - jekyll-gist
   - jemoji
   - jekyll-include-cache
-  - jekyll-remote-theme
+#  - jekyll-remote-theme
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -50,7 +50,8 @@ plugins:
 # Excluded items can be processed by explicitly listing the directories or
 # their entries' file path in the `include:` list.
 #
-# exclude:
+# Exclude from processing.
+exclude:
   - .sass-cache/
   - .jekyll-cache/
   - gemfiles/

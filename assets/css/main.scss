@@ -1,43 +1,192 @@
---- 
+---
+---
 
---- 
+$background-color: #08070d;
+$text-color: #d4d0dc;
+$muted-text-color: #928a9d;
 
-.code-header {
-    display: flex;
-    justify-content: flex-end;
-    padding: 0.3em;
-    background: #3b3b3b;
+$primary-color: #8b5cf6;
+
+$link-color: #00e5ff;
+$link-color-hover: #a78bfa;
+$link-color-visited: #67d8e8;
+
+$masthead-link-color: #e9e5f0;
+$masthead-link-color-hover: #00e5ff;
+
+$border-color: #27202f;
+
+// Theme imports
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
+@import "minimal-mistakes";
+
+// Violet -> black page background
+body {
+  background:
+    radial-gradient(
+      circle at 50% -10%,
+      rgba(124, 58, 237, 0.32),
+      transparent 45%
+    ),
+    linear-gradient(
+      180deg,
+      #21102f 0%,
+      #130d1b 30%,
+      #09090e 65%,
+      #050507 100%
+    );
+
+  background-attachment: fixed;
 }
 
-.copy-code-button {
+// Allow the page background to remain visible
+.initial-content,
+.page,
+.page__inner-wrap,
+.archive {
+  background: transparent;
+}
+
+// Semi-transparent masthead
+.masthead {
+  background: rgba(7, 7, 12, 0.76);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(139, 92, 246, 0.15);
+}
+
+// Headings
+.page__title {
+  color: #f5f3ff;
+}
+
+.page__title a {
+  color: inherit;
+}
+
+.page__title a:hover {
+  color: #00e5ff;
+}
+
+.page__content h2 {
+  color: #e9ddff;
+  border-bottom: 1px solid rgba(139, 92, 246, 0.25);
+}
+
+.page__content h3 {
+  color: #d9ccff;
+}
+
+// Links
+a {
+  transition: color 0.15s ease;
+}
+
+a:hover {
+  text-shadow: 0 0 8px rgba(0, 229, 255, 0.25);
+}
+
+// Tags and buttons
+.page__taxonomy-item,
+.btn {
+  background: rgba(139, 92, 246, 0.12);
+  border: 1px solid rgba(139, 92, 246, 0.35);
+  color: #c4b5fd;
+}
+
+.masthead {
+  background: rgba(7, 7, 12, 0.35);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(139, 92, 246, 0.15);
+}
+
+.masthead__inner-wrap,
+.greedy-nav {
+  background: transparent !important;
+}
+
+.greedy-nav .hidden-links {
+  background: rgba(10, 8, 16, 0.92);
+}
+
+.post-quote {
+  position: relative;
+  margin: 4rem auto 1rem;
+  padding: 2rem 2.25rem;
+  max-width: 42rem;
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(139, 92, 246, 0.10),
+      rgba(0, 229, 255, 0.05)
+    ),
+    rgba(10, 8, 16, 0.72);
+
+  border: 1px solid rgba(139, 92, 246, 0.35);
+  border-radius: 18px;
+
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.35),
+    0 0 28px rgba(139, 92, 246, 0.10);
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  overflow: hidden;
+
+  &::before {
+    content: "“";
     position: absolute;
-    top: 0.25em;
-    right: 0.5em;
-    padding: 0.25em 0.5em;
-    font-size: 0.8em;
-    background: #444;
-    color: white;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    z-index: 10;
+    top: -0.35rem;
+    left: 1rem;
+
+    font-size: 5rem;
+    line-height: 1;
+    font-family: Georgia, serif;
+    color: rgba(139, 92, 246, 0.16);
+
+    pointer-events: none;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 12%;
+    width: 76%;
+    height: 1px;
+
+    background: linear-gradient(
+      90deg,
+      transparent,
+      #8b5cf6,
+      #00e5ff,
+      #8b5cf6,
+      transparent
+    );
+  }
+
+  p,
+  footer {
+    position: relative;
+    z-index: 1;
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+
+  p {
+    margin: 0;
+    color: #f0eaff;
+    font-style: italic;
+  }
+
+  footer {
+    margin-top: 1rem;
+    color: #a79fb3;
+    font-style: italic;
+  }
 }
-
-div.highlighter-rouge {
-    position: relative; // Important for button positioning
-}
-
-$background-color: #033f63;
-
-img.scaled {
-    align-items: center;
-    padding: 0.4em;
-    border-radius: 32px;
-    max-width: 40%;
-    height: auto;
-}
-
-// >>> Custom CSS needs to be added _before_ any imports !!!
-
-@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
-@import "minimal-mistakes"; // main partials

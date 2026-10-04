@@ -70,7 +70,7 @@ Whether you're improving user trust, strengthening your brand presence, or simpl
 
 ---
 
-_"Nothing lasts as long as a temporary solution."_
-<br/><br/>
--- Milton Friedman
-{: style="text-align: center;"}
+{% include post-quote.html
+   text="Nothing lasts as long as a temporary solution."
+   author="Milton Friedman"
+%}

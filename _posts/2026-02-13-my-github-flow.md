@@ -147,7 +147,7 @@ You don't need to do it forever. You just need it when things get messy - which,
 
 ---
 
-_"Don't ship shit."_
-<br/><br/>
--- Linus Torvalds
-{: style="text-align: center;"}
+{% include post-quote.html
+   text="Don't ship shit."
+   author="Linus Torvalds"
+%}

@@ -17,5 +17,6 @@ If you arrived here while searching for content related to  `HTTP 429` response 
 
 ---
 
-_"If nothing changes, nothing changes."_
-{: style="text-align: center;"}
+{% include post-quote.html
+   text="If nothing changes, nothing changes."
+%}

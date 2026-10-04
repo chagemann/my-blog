@@ -263,8 +263,7 @@ A successful response will return with `HTTP 200` and include the `Content-Type:
 
 ---
 
-
-_"There is never enough time to do it right,<br/>but there is always enough time to fix or to do it over."_
-<br/><br/>
-Daniel T. Barry
-{: style="text-align: center;"}
+{% include post-quote.html
+   text="There is never enough time to do it right,<br/>but there is always enough time to fix or to do it over."
+   author="Daniel T. Barry"
+%}

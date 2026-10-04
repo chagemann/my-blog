@@ -204,7 +204,7 @@ A demo app with the code above can be found in [GitHub](https://github.com/IBM-S
 
 ---
 
-_"Quality means doing it right when no one is looking."_
-<br/><br/>
--- Henry Ford
-{: style="text-align: center;"}
+{% include post-quote.html
+   text="Quality means doing it right when no one is looking."
+   author="Henry Ford"
+%}

@@ -125,5 +125,6 @@ In vary rare circumstances it could even be possible that the time, provided by 
 
 ---
 
-_"Nothing lasts as long as a temporary solution."_
-{: style="text-align: center;"}
+{% include post-quote.html
+   text="Nothing lasts as long as a temporary solution."
+%}

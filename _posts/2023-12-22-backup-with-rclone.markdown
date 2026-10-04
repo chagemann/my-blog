@@ -99,5 +99,6 @@ I haven't implemented a clean-up job that deletes older files. This applies espe
 
 ---
 
-_"Backups are love letters to your future self."_
-{: style="text-align: center;"}
+{% include post-quote.html
+   text="Backups are love letters to your future self."
+%}

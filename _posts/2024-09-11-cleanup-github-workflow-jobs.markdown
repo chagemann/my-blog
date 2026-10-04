@@ -69,7 +69,7 @@ By implementing this configuration, you ensure that old and failed workflow runs
 
 ---
 
-_"Don't find faults, find a remedy."_
-<br/><br/>
--- Henry Ford
-{: style="text-align: center;"}
+{% include post-quote.html
+   text="Don't find faults, find a remedy."
+   author="Henry Ford"
+%}

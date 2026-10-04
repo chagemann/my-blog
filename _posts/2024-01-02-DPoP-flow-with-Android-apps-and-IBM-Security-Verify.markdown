@@ -399,5 +399,6 @@ In summary, I described the mechanisms for the relevant parties (client, authori
 
 ---
 
-_"Nobody is so good that has nothing to learn,<br/>and nobody so bad that has nothing to share."_
-{: style="text-align: center;"}
+{% include post-quote.html
+   text="Nobody is so good that has nothing to learn,<br/>and nobody so bad that has nothing to share."
+%}

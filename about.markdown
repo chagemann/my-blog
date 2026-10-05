@@ -17,6 +17,4 @@ If you arrived here while searching for content related to  `HTTP 429` response 
 
 ---
 
-{% include post-quote.html
-   text="If nothing changes, nothing changes."
-%}
+{% include post-quote.html text="Freedom is always the freedom of dissenters." author="Rosa Luxemburg" %}

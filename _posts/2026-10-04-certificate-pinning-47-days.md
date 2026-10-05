@@ -20,7 +20,7 @@ For backend teams, this is mostly an automation problem - renew more often, auto
 
 ## Why hardcoded pins struggle to keep up
 
-SPKI (Subject Public Key Info) pinning - the kind `OkHttp`'s `CertificatePinner` uses - pins the *public key*, not the certificate itself. So a renewal doesn't break the pin, as long as the key pair doesn't change. The problem is that shorter certificate lifetimes mean more frequent renewals, and where each renewal also rotates the key, you need the app to recognise the new key before the server switches to it. The [OWASP Mobile Security Testing Guide](https://mas.owasp.org/MASTG/knowledge/android/MASVS-NETWORK/MASTG-KNOW-0015) covers the different pinning approaches in detail.
+SPKI (Subject Public Key Info) pinning - the kind `OkHttp`'s `CertificatePinner` uses - pins the *public key*, not the certificate itself. So a renewal doesn't break the pin, as long as the key pair doesn't change. The problem is that shorter certificate lifetimes means more frequent renewals, and where each renewal also rotates the key, you need the app to recognise the new key before the server switches to it. The [OWASP Mobile Security Testing Guide](https://mas.owasp.org/MASTG/knowledge/android/MASVS-NETWORK/MASTG-KNOW-0015) covers the different pinning approaches in detail.
 
 With hardcoded pins, the configuration lives directly in the binary:
 
@@ -52,10 +52,10 @@ Backup pins and pre-provisioned keys can reduce the need for individual releases
 
 It's tempting. If the SPKI hash only depends on the public key, and shorter certificate lifetimes don't mandate new keys, you could renew with the same key pair each time and your hardcoded pin would never need to change.
 
-Technically, yes - but there are a few things worth thinking through first:
+Technically, yes - but there is a few things worth thinking through first:
 
 - Certificate lifetime and key lifetime protect different things. Expiry ends the validity of one certificate; a stolen key can still be used in new certificates until you rotate it.
-- Revoking one certificate doesn't make a compromised key safe to reuse.
+- Revoking one certificate doesn't makes a compromised key safe to reuse.
 - Emergency rotation still needs a client-side strategy. A hardcoded-pin deployment needs a usable backup pin or an app update to recover.
 
 Key reuse doesn't eliminate the benefits of shorter certificate lifetimes - it just makes key lifetime a separate decision you have to manage explicitly.
@@ -74,7 +74,7 @@ There are four main parts:
 
 - **Your signing pipeline creates the policy.** During certificate renewal or key rotation, it computes the relevant SPKI hashes and packages both pins into a signed JWT. The private signing key stays in your infrastructure. The pipeline publishes the policy before deploying the new certificate.
 - **Firebase Remote Config delivers the policy.** The app fetches the signed JWT while foregrounded and can receive updates during an active session. Firebase transports the policy; it doesn't decide which pins to trust.
-- **The app verifies, caches, and enforces the policy.** An embedded public key lets the app verify who signed the JWT. After checking its validity and version, the app caches it for future starts and compares the server's SPKI hash against the accepted pins before sending application data.
+- **The app verifies, caches, and enforces the policy.** An embedded public key lets the app verify who signed the JWT. After checking it's validity and version, the app caches it for future starts and compares the server's SPKI hash against the accepted pins before sending application data.
 - **Firebase Crashlytics provides operational visibility.** Every policy failure and pin mismatch fires a custom event so your on-call channel has actionable signal.
 
 A local cache lets the app restore its last valid policy on cold start. *Fail-open* applies when no valid policy can be loaded at all - in that case the app allows the connection and falls back to standard TLS validation. This is a deliberate trade-off: availability takes priority over the additional pin check when the policy pipeline itself breaks down.
@@ -169,7 +169,7 @@ Record policy failures and pin mismatches as non-fatal diagnostics. Include `ver
 
 ### Getting the rotation timing right
 
-The step people get wrong most often is the ordering. Here's the correct sequence:
+The step people get wrong most often are the ordering. Here's the correct sequence:
 
 1. Stage the new certificate and compute its SPKI hash (`K_next`). You can extract it with: `openssl x509 -in cert.pem -pubkey -noout | openssl pkey -pubin -outform der | openssl dgst -sha256 -binary | base64`
 2. Sign and publish a new JWT containing both `K_current` and `K_next`.
@@ -205,7 +205,7 @@ Test the kill switch by publishing a newer `enforce: false` policy - it suspends
 
 **Phase 3 - Enforce broadly**
 
-Expand to the full production population. The decision rule is the same as Phase 2: block a mismatch when a valid policy has `enforce: true`. The only thing changing from Phase 2 is rollout scope.
+Expand to the full production population. The decision rule is the same as Phase 2: block a mismatch when a valid policy have `enforce: true`. The only thing changing from Phase 2 is rollout scope.
 
 Keep the kill switch and monitor both blocked requests and loss of pin coverage.
 

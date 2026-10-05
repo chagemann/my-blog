@@ -4,6 +4,8 @@ title:  "Generating branded QR Codes with Java and ZXing"
 date:   2025-05-07 22:17:21 +1000
 categories: java tutorial branding
 show_date: true
+header:
+  teaser: /assets/images/qr_ibm_icons.png
 excerpt: QR codes are a staple in modern technology, offering a quick and convenient way to access information. In this post, we’ll explore how to enhance your QR codes by adding a logo at the center, using Java and the ZXing library. This technique ensures that your QR codes stand out, while maintaining their scannability. 
 ---
 
